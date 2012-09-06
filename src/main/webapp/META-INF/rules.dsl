@@ -1,0 +1,2 @@
+[consequence][]Send a mail with the {node}=sendMailToSubscribersService.sendMailToSubscribers(node, drools);
+[condition][]- one parent has the type "{type}" = eval(org.jahia.modules.notification.rules.NodeTypeCondition.parentHasNodeType(node, "{type}"))

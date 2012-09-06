@@ -1,0 +1,11 @@
+#* @vtlvariable name="currentUser" type="org.jahia.services.content.JCRNodeWrapper" *#
+#* @vtlvariable name="bundle" type="java.util.ResourceBundle" *#
+<html>
+<body>
+<h1>
+</h1>
+<p>${bundle.getString("label.hello")} ${currentUser.getDisplayableName()},</p>
+<p>${bundle.getString("label.new.content")}</p>
+<p>${node.getName()}</p>
+</body>
+</html>

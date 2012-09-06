@@ -1,0 +1,26 @@
+package org.jahia.modules.notification.rules
+
+#list any import classes here.
+import org.jahia.services.content.rules.*
+import org.jahia.services.content.JCRContentUtils
+import org.jahia.modules.notification.rules.SendMailToSubscribersRuleService
+
+import org.slf4j.Logger
+
+expander rules.dsl
+
+#declare any global variables here
+global User user
+global Service service
+global Logger logger
+global JCRContentUtils jcrUtils
+global SendMailToSubscribersRuleService sendMailToSubscribersService
+
+rule "Send notification"
+    when
+        A new node is created
+            - the node has the type jnt:content
+            - one parent has the type "jmix:subscribers"
+    then
+        Send a mail with the node
+end

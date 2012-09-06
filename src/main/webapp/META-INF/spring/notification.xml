@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    <bean class="org.jahia.modules.notification.actions.Subscribe">
+        <property name="name" value="subscribeAction"/>
+    </bean>
+
+    <bean class="org.jahia.services.content.rules.ModuleGlobalObject">
+        <property name="globalRulesObject">
+            <map>
+                <entry key="sendMailToSubscribersService">
+                    <bean class="org.jahia.modules.notification.rules.SendMailToSubscribersRuleService">
+                        <property name="mailService" ref="MailService"/>
+                        <property name="from" value="dgriffon@jahia.com"/>
+                        <property name="mailTemplatePath" value="/META-INF/mails/notification.vm"/>
+                    </bean>
+                </entry>
+                <entry key="nodeTypeCondition">
+                    <bean class="org.jahia.modules.notification.rules.NodeTypeCondition"/>
+                </entry>
+            </map>
+        </property>
+    </bean>
+</beans>
