@@ -6,6 +6,7 @@
 </h1>
 <p>${bundle.getString("label.hello")} ${currentUser.getDisplayableName()},</p>
 <p>${bundle.getString("label.new.content")}</p>
+<p><a href="${url}">${displayableNode.getDisplayableName()}</a></p>
 <p>${node.getName()}</p>
 </body>
 </html>

@@ -12,8 +12,11 @@
                 <entry key="sendMailToSubscribersService">
                     <bean class="org.jahia.modules.notification.rules.SendMailToSubscribersRuleService">
                         <property name="mailService" ref="MailService"/>
+                        <property name="urlResolverFactory" ref="urlResolverFactory" />
+                        <property name="urlRewriteService" ref="UrlRewriteService" />
                         <property name="from" value="dgriffon@jahia.com"/>
                         <property name="mailTemplatePath" value="/META-INF/mails/notification.vm"/>
+                        <property name="URLGenericPrefix" value="http://##servername##:8080/jahia/cms/render/live/"/>
                     </bean>
                 </entry>
                 <entry key="nodeTypeCondition">
